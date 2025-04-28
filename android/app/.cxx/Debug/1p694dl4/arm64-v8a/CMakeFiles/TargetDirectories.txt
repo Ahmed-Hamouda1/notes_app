@@ -1,0 +1,2 @@
+D:/flutter-course-for-beginners/notes_app/android/app/.cxx/Debug/1p694dl4/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/flutter-course-for-beginners/notes_app/android/app/.cxx/Debug/1p694dl4/arm64-v8a/CMakeFiles/rebuild_cache.dir
