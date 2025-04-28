@@ -39,7 +39,8 @@ class NoteCard extends StatelessWidget
             trailing: IconButton
             (
               onPressed: () {},
-              icon: const Icon(
+              icon: const Icon
+              (
                 Icons.delete,
                 color: Colors.black,
                 size: 30,
@@ -53,6 +54,27 @@ class NoteCard extends StatelessWidget
           )
         ],
       ),
+    );
+  }
+}
+
+class NotesListView extends StatelessWidget 
+{
+  const NotesListView({super.key});
+
+  @override
+  Widget build(BuildContext context) 
+  {
+    return ListView.builder
+    (
+      itemBuilder: (context,index)
+      {
+        return Padding
+        (
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: NoteCard(),
+        );
+      }
     );
   }
 }
