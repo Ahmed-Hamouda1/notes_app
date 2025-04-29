@@ -10,6 +10,7 @@ class CustomTextFaild extends StatelessWidget
   bool secure ;
   TextEditingController? controller=TextEditingController();
   TextInputType? inputType;
+  int ?numOfLines;
 
   CustomTextFaild
   (
@@ -23,7 +24,8 @@ class CustomTextFaild extends StatelessWidget
       this.suffix,
       this.secure = false,
       this.inputType,
-      this.hintColor
+      this.hintColor,
+      this.numOfLines
     }
   );
   Function(String)? onChange;
@@ -37,13 +39,12 @@ class CustomTextFaild extends StatelessWidget
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField
       ( 
-        
         keyboardType: inputType,
         obscureText: secure,
         controller: controller,
         //keyboardType: TextInputType.,
         
-        style: TextStyle(color: pColor),
+        style: TextStyle(color: pColor,fontSize: 15),
         onChanged: onChange,
         decoration: InputDecoration
         (   
@@ -52,7 +53,7 @@ class CustomTextFaild extends StatelessWidget
           hintStyle: TextStyle(color: pColor),
           enabledBorder: OutlineInputBorder
           (
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: const BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.circular(10)
           ),
           focusedBorder: OutlineInputBorder
@@ -65,6 +66,7 @@ class CustomTextFaild extends StatelessWidget
           //   borderSide: BorderSide(color: pColor),
           // ),
         ),
+        maxLines: numOfLines,
       ),
     );
   }
