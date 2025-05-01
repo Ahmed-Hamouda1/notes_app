@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_appbar.dart';
+import 'package:notes_app/widgets/custom_text_faild.dart';
 
 class EditNoteView extends StatelessWidget 
 {
@@ -8,18 +9,21 @@ class EditNoteView extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return const Scaffold
+    return Scaffold
     (
       body:  Padding
       (
-        padding:  EdgeInsets.all(15),
+        padding:  const EdgeInsets.all(15),
         child: Column
         (
           children: 
           [
-            SizedBox(height: 50,),
-            CustomAppBar(title: "Edit",),
-            SizedBox(height: 20,),
+            const SizedBox(height: 50,),
+            const CustomAppBar(title: "Edit",icon: Icon(Icons.check),),
+            const SizedBox(height: 20,),
+            CustomTextFaild(hintText: "Title",pColor: Colors.lightBlue,),
+            const SizedBox(height: 20,),
+            CustomTextFaild(hintText: "Title",pColor: Colors.lightBlue,numOfLines: 5,),
           ],
         ),
       ),
