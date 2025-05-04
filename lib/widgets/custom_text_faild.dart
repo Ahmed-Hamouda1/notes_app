@@ -11,6 +11,7 @@ class CustomTextFaild extends StatelessWidget
   TextEditingController? controller=TextEditingController();
   TextInputType? inputType;
   int ?numOfLines;
+  void Function(String?)? onSaved;
 
   CustomTextFaild
   (
@@ -25,7 +26,8 @@ class CustomTextFaild extends StatelessWidget
       this.secure = false,
       this.inputType,
       this.hintColor,
-      this.numOfLines
+      this.numOfLines,
+      this.onSaved,
     }
   );
   Function(String)? onChange;
@@ -37,8 +39,20 @@ class CustomTextFaild extends StatelessWidget
     return Padding
     (
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: TextField
+      child: TextFormField
       ( 
+        onSaved: onSaved,
+        validator: (value)
+        {
+          if(value?.isEmpty ?? true)
+          {
+            return 'is required';
+          } 
+          else
+          {
+          return null;
+          }
+        },
         keyboardType: inputType,
         obscureText: secure,
         controller: controller,
