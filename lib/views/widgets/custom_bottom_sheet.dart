@@ -76,7 +76,7 @@ class _AddNoteSheetState extends State<AddNoteSheet>
               if(formKey.currentState!.validate()){
                 formKey.currentState!.save();
               }
-              else{
+              else{ 
                 autovalidateMode=AutovalidateMode.always;
               }
             },
