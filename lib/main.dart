@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/notes_view.dart';
 
 void main() {
   runApp(const NotesApp());
@@ -18,7 +19,7 @@ class NotesApp extends StatelessWidget
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color.fromARGB(255, 62, 62, 62)
       ),
-      home: Scaffold(),
+      home: const NotesView(),
     );
   }
 }
