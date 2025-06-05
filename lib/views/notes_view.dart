@@ -8,9 +8,15 @@ class NotesView extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return const Scaffold
+    return Scaffold
     (
-      body: NotesViewBody(),
+      body: ListView.builder
+      (
+        itemBuilder: (BuildContext context, int index) 
+        {
+          return NotesViewBody(); 
+        },
+      ),
     );
   }
 }
