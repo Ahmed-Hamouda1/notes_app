@@ -10,13 +10,7 @@ class NotesView extends StatelessWidget
   {
     return Scaffold
     (
-      body: ListView.builder
-      (
-        itemBuilder: (BuildContext context, int index) 
-        {
-          return NotesViewBody(); 
-        },
-      ),
+      body: NotesViewBody()
     );
   }
 }
