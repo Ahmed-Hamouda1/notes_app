@@ -6,6 +6,7 @@ class CustomButton extends StatelessWidget
   final String title;
   final Color color;
   final Color titleColor;
+  VoidCallback? onTap;
   CustomButton
   (
     {
@@ -16,10 +17,10 @@ class CustomButton extends StatelessWidget
       required this.titleColor
     }
   );
-  VoidCallback? onTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return GestureDetector
     (
       onTap: onTap,

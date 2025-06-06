@@ -41,9 +41,9 @@ class NoteCard extends StatelessWidget
             [
               ListTile
               (
-                title: Padding
+                title: const Padding
                 (
-                  padding: const EdgeInsets.only(bottom: 25),
+                  padding: EdgeInsets.only(bottom: 25),
                   child: Text("Flutter tips",style: TextStyle(color: Colors.black,fontSize: 25),),
                 ),
                 subtitle: Text("flutter is framework to build app run in mobile flutter is framework to flutter is framework to flutter is framework to",style: TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 15),),
