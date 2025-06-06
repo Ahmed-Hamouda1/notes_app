@@ -12,20 +12,28 @@ class AddNoteView extends StatelessWidget
     return Padding
     (
       padding: const EdgeInsets.all(15),
-      child: Column
+      child: SingleChildScrollView
       (
-        children: 
-        [
-          CustomTextFaild(hintText: "title", pColor: Colors.lightBlue),
-          CustomTextFaild(hintText: "description", pColor: Colors.lightBlue),
-          CustomButton
-          (
-            title: "Add",
-            color: Colors.blue,
-            titleColor:Colors.black
-          )
-      
-        ],
+        child: Column
+        (
+          children: 
+          [
+            CustomTextFaild(hintText: "title", pColor: Colors.lightBlue),
+            CustomTextFaild
+            (
+              hintText: "description", 
+              pColor: Colors.lightBlue,
+              maxLines: 5,
+            ),
+            SizedBox(height: 30,),
+            CustomButton
+            (
+              title: "Add",
+              color: Colors.blue,
+              titleColor:Colors.black
+            ),      
+          ],
+        ),
       ),
     );
   }

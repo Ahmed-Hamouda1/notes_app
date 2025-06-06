@@ -8,15 +8,24 @@ class CustomTextFaild extends StatelessWidget
   Widget? suffix;
   bool secure ;
   TextEditingController? controller=TextEditingController();
+  Function(String)? onChange;
+  Function(String)? onSubmited;
+  int maxLines;
 
   CustomTextFaild
   (
     {
-      super.key, required this.hintText, this.onChange ,this.onSubmited, this.controller,required this.pColor,this.suffix,this.secure=false
+      super.key, 
+      required this.hintText, 
+      this.onChange,
+      this.onSubmited, 
+      this.controller,
+      required this.pColor,
+      this.suffix,
+      this.secure=false,
+      this.maxLines=1
     }
   );
-  Function(String)? onChange;
-  Function(String)? onSubmited;
 
   @override
   Widget build(BuildContext context) 
@@ -37,20 +46,22 @@ class CustomTextFaild extends StatelessWidget
         style: TextStyle(color: pColor),
         onChanged: onChange,
         onFieldSubmitted: onSubmited,
+        cursorColor: pColor,
+        maxLines: maxLines,
         decoration: InputDecoration
         (   
           suffixIcon: suffix,
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey),
-          enabledBorder: OutlineInputBorder
+          enabledBorder: OutlineInputBorder // textFaild just enabeld , before user click
           (
             borderSide: BorderSide(color: pColor),
           ),
-          focusedBorder: OutlineInputBorder
+          focusedBorder: OutlineInputBorder // after user click on textFaild
           (
             borderSide: BorderSide(color: pColor),
           ) ,
-          border:OutlineInputBorder
+          border:OutlineInputBorder // defualt state
           (
             borderSide: BorderSide(color: pColor),
           ),
