@@ -1,4 +1,5 @@
 
 import 'package:flutter/material.dart';
 
-Color KPColor = Colors.lightBlue;
+Color kPColor = Colors.lightBlue;
+const kNotesBox = 'notes_box';
