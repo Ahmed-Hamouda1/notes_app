@@ -8,16 +8,19 @@ class CustomIcon extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return Container
+    return GestureDetector
     (
-      height: 40,
-      width: 40,
-      decoration: BoxDecoration
+      child: Container
       (
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey.withOpacity(0.3)
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration
+        (
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey.withOpacity(0.3)
+        ),
+        child: icon,
       ),
-      child: icon,
     );
   }
 }
