@@ -22,8 +22,8 @@ class EditNoteView extends StatelessWidget
             const SizedBox(height: 20,),
             const CustomAppBar(title: "Edit Note",icon: Icon(Icons.done),),
             const SizedBox(height: 20,),
-            CustomTextFaild(hintText: 'title', pColor: KPColor,),
-            CustomTextFaild(hintText: 'description', pColor: KPColor,maxLines: 5,)
+            CustomTextFaild(hintText: 'title', pColor: kPColor,),
+            CustomTextFaild(hintText: 'description', pColor: kPColor,maxLines: 5,)
           ],
         ),
       ),

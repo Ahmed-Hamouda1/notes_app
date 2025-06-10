@@ -9,31 +9,84 @@ class AddNoteView extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return Padding
+    return const Padding
     (
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.all(15),
       child: SingleChildScrollView
       (
-        child: Column
-        (
-          children: 
-          [
-            CustomTextFaild(hintText: "title", pColor: Colors.lightBlue),
-            CustomTextFaild
-            (
-              hintText: "description", 
-              pColor: Colors.lightBlue,
-              maxLines: 5,
-            ),
-            SizedBox(height: 30,),
-            CustomButton
-            (
-              title: "Add",
-              color: Colors.blue,
-              titleColor:Colors.black
-            ),      
-          ],
-        ),
+        child: AddNoteForm(),
+      ),
+    );
+  }
+}
+
+class AddNoteForm extends StatefulWidget 
+
+{
+  const AddNoteForm({
+    super.key,
+  });
+
+  @override
+  State<AddNoteForm> createState() => _AddNoteFormState();
+}
+
+class _AddNoteFormState extends State<AddNoteForm> 
+{
+  final GlobalKey<FormState> form1 = GlobalKey();
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+  String? title ,subTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form
+    (
+      key: form1,
+      autovalidateMode: autoValidateMode,
+      child: Column
+      (
+        children: 
+        [
+          CustomTextFaild
+          (
+            onSaved: (value)
+            {
+              title=value;
+            },
+            hintText: "title", 
+            pColor: Colors.lightBlue
+          ),
+          CustomTextFaild
+          (
+            onSaved: (value)
+            {
+              subTitle =value;
+            },
+            hintText: "description", 
+            pColor: Colors.lightBlue,
+            maxLines: 5,
+          ),
+          const SizedBox(height: 30,),
+          CustomButton
+          (
+            onTap: ()
+            {
+              if(form1.currentState!.validate())
+              {
+                form1.currentState!.save(); // بتنفذ كل الأكشنات اللي في onSaved: لكل حقل.
+              }
+              else
+              {
+                autoValidateMode =AutovalidateMode.always; // معناها: "ابدأ طلع رسائل الخطأ على طول من غير ما أستنى المستخدم يضغط Save تاني"
+                setState(() {
+                });
+              }
+            },
+            title: "Add",
+            color: Colors.blue,
+            titleColor:Colors.black
+          ),      
+        ],
       ),
     );
   }
